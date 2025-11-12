@@ -1,6 +1,3 @@
-// CONFIGURANDO O BANCO DE DADOS
-
-
 // CONFIGURAÇÃO DO EXPRESS
 const express = require('express'); // Servidor 
 const app = express(); // Objeto express (servidor)
@@ -28,9 +25,11 @@ app.post('/add', function(req,res) {
     }).catch(function(erro) {
         res.send("Houve um erro: " + erro)
     })
-})
+});
 
-app.listen(8082, function(){
+
+
+app.listen(process.env.PORT, function(){
     console.log("Servidor rodando na url http://localhost:8082/")
-})
+});
 
